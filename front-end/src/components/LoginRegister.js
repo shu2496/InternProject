@@ -7,11 +7,25 @@ function LoginRegister() {
     const navigate = useNavigate();
     return (
         <>
-            <br />
-            <Button onClick={() => navigate("/Registration")}>
-                Registration</Button>
-            <Button onClick={() => navigate("/Login")}>Login</Button>
-
+            <div className="container">
+                <div className="login-form" >
+                    <br />
+                    <Button 
+                    type="submit"
+                    className="button-container" 
+                    style={{ width: "150px" }}
+                    onClick={() => navigate("/Registration")}>
+                        Register
+                    </Button>
+                    <Button 
+                    type="submit"
+                    className="button-container" 
+                    style={{ width: "150px" }}
+                    onClick={() => navigate("/Login")}>
+                        Login
+                    </Button>
+                </div>
+            </div>
         </>
     );
 }

@@ -8,21 +8,41 @@ function CreateKafkaTopic() {
     }
 
     return (
-        <div>
-            <Form onSubmit={handleSubmit}>
-                <FormGroup>
-                    <label for="userName">Enter Topic Name</label>
-                    <Input type="text" style={{ width: "350px" }}></Input><br />
+        <div className="container">
+            <div className="login-form">
+                <Form onSubmit={handleSubmit}>
+                    <FormGroup>
+                    <div className="input-container">
+                        <label for="userName">Enter Topic Name</label>
+                        <Input
+                            type="text"
+                            style={{ width: "400px" , borderRadius: "50px"}}
+                            required
+                        />
+                        </div><br />
 
-                    <label for="id">No of Partition</label>
-                    <Input type="text" style={{ width: "350px" }}></Input><br />
+                        <div className="input-container">
+                        <label for="id">No of Partition</label>
+                        <Input
+                            type="number"
+                            min="0"
+                            style={{ width: "400px" , borderRadius: "50px"}}
+                            required
+                        />
+                         </div><br />
 
-                    <Button type="submit" color="success">Submit</Button>
+                        <Button 
+                        
+                        type="submit"
+                        className="button-container" 
+                        style={{ width: "150px" , borderRadius: "50px"}}>
+                            
+                        Submit</Button>
 
-                </FormGroup>
-            </Form>
+                    </FormGroup>
+                </Form>
 
-
+            </div>
 
         </div>
     );

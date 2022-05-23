@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import {Row,Col } from 'reactstrap';
 import Header from './components/Header';
-import Menus from './components/Menus';
 import AllMessages from './components/AllMessages';
 import Home from './components/Home';
 import CreateKafkaTopic from './components/CreateKafkaTopic';

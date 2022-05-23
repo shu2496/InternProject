@@ -1,7 +1,8 @@
 import React from "react";
-import { ListGroup,ListGroupItem } from "reactstrap";
+import { ListGroup, ListGroupItem } from "reactstrap";
 import { Button } from "reactstrap";
 import { useNavigate } from "react-router-dom";
+
 /*
 const Menus=()=>{
     return(
@@ -16,18 +17,72 @@ const Menus=()=>{
 
     );
 }*/
-function Menus(){
+function Menus() {
     const navigate = useNavigate();
 
-    return(
+    return (
         <>
-<Button  onClick={() => navigate("/Home")}>Home</Button><br/><br/>
-<Button onClick={() => navigate("/CreateKafkaTopic")}>Create Kafka Topic</Button><br/><br/>
-<Button onClick={() => navigate("/ViewKafkaTopic")}>ViewKafkaTopic</Button><br/><br/>
-<Button onClick={() => navigate("/ViewTopicDescription")}>ViewTopicDescription</Button><br/><br/>
-<Button onClick={() => navigate("/DeadLetterQueue")}>DeadLetterQueue</Button><br/><br/>
-<Button onClick={() => navigate("/AllMessages")}>AllMessages</Button>
-</>
+            <Button 
+                style={{
+                    color: "black",
+                    backgroundColor: "white",
+                    width: "200px",
+                    borderRadius: "50px"
+                }}
+                onClick={() => navigate("/Home")}>
+                Home
+            </Button><br /><br />
+            <Button
+                style={{
+                    color: "black",
+                    backgroundColor: "white",
+                    width: "200px",
+                    borderRadius: "50px"
+                }}
+                onClick={() => navigate("/CreateKafkaTopic")}>
+                Create Kafka Topic
+            </Button><br /><br />
+            <Button
+                style={{
+                    color: "black",
+                    backgroundColor: "white",
+                    width: "200px",
+                    borderRadius: "50px"
+                }}
+                onClick={() => navigate("/ViewKafkaTopic")}>
+                ViewKafkaTopic
+            </Button><br /><br />
+            <Button
+                style={{
+                    color: "black",
+                    backgroundColor: "white",
+                    width: "200px",
+                    borderRadius: "50px"
+                }}
+                onClick={() => navigate("/ViewTopicDescription")}>
+                ViewTopicDescription
+            </Button><br /><br />
+            <Button
+                style={{
+                    color: "black",
+                    backgroundColor: "white",
+                    width: "200px",
+                    borderRadius: "50px",
+                }}
+                onClick={() => navigate("/DeadLetterQueue")}>
+                DeadLetterQueue
+            </Button><br /><br />
+            <Button
+                style={{
+                    color: "black",
+                    backgroundColor: "white",
+                    width: "200px",
+                    borderRadius: "50px"
+                }}
+                onClick={() => navigate("/AllMessages")}>
+                AllMessages
+            </Button>
+        </>
     );
 }
-export  default Menus;
+export default Menus;

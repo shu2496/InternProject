@@ -22,10 +22,7 @@ function Registration() {
         } else {
             setFlag(false);
             localStorage.setItem("Email", JSON.stringify(email));
-            localStorage.setItem(
-                "Password",
-                JSON.stringify(password)
-            );
+            localStorage.setItem("Password", JSON.stringify(password));
             console.log("Saved in Local Storage");
 
             setLogin(!login);
@@ -41,89 +38,109 @@ function Registration() {
 
     return (
         <>
+            <div className="container">
+                <div className="login-form">
 
-            <div>
-                {" "}
-                {login ? (
-                    <form onSubmit={handleFormSubmit}>
+                    <div>
+                        {" "}
+                        {login ? (
+                            <form onSubmit={handleFormSubmit}>
 
 
-                        <div className="form-group">
-                            <label>Name</label>
-                            <input
-                                type="text"
-                                className="form-control"
-                                placeholder="Enter Full Name"
-                                name="name"
-                                style={{ width: "300px" }}
-                                onChange={(event) => setName(event.target.value)}
-                            /><br />
-                        </div>
+                                <div className="input-container">
+                                    <label>Name</label>
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        placeholder="Enter Full Name"
+                                        name="name"
+                                        style={{ width: "400px", borderRadius: "50px" }}
+                                        onChange={(event) => setName(event.target.value)}
+                                        required
+                                    /><br />
+                                </div>
 
-                        <div className="form-group">
-                            <label>Email</label>
-                            <input
-                                type="email"
-                                className="form-control"
-                                placeholder="Enter email"
-                                style={{ width: "300px" }}
-                                onChange={(event) => setEmail(event.target.value)}
-                            /><br />
-                        </div>
+                                <div className="input-container">
+                                    <label>Email</label>
+                                    <input
+                                        type="email"
+                                        className="form-control"
+                                        placeholder="Enter email"
+                                        style={{ width: "400px", borderRadius: "50px" }}
+                                        onChange={(event) => setEmail(event.target.value)}
+                                        required
+                                    /><br />
+                                </div>
 
-                        <div className="form-group">
-                            <label>Password</label>
-                            <input
-                                type="password"
-                                className="form-control"
-                                placeholder="Enter password"
-                                style={{ width: "300px" }}
-                                onChange={(event) => setPassword(event.target.value)}
-                            /><br />
-                        </div>
+                                <div className="input-container">
+                                    <label>Password</label>
+                                    <input
+                                        type="password"
+                                        className="form-control"
+                                        placeholder="Enter password"
+                                        style={{ width: "400px", borderRadius: "50px"}}
+                                        onChange={(event) => setPassword(event.target.value)}
+                                        required
+                                    /><br />
+                                </div>
 
-                        <div className="form-group">
-                            <label>Phone No.</label>
-                            <input
-                                type="Phone"
-                                className="form-control"
-                                placeholder="Enter contact no"
-                                style={{ width: "300px" }}
-                                onChange={(event) => setPhone(event.target.value)}
-                            />
-                        </div><br />
+                                <div className="input-container">
+                                    <label>Phone No.</label>
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        name="phone"
+                                        pattern="[+]{1}[0-9]{11,14}"
+                                        className="form-control"
+                                        placeholder="Enter contact no"
+                                        style={{ width: "400px", borderRadius: "50px"}}
+                                        onChange={(event) => setPhone(event.target.value)}
+                                        required
+                                    />
+                                </div><br />
 
-                        <div className="form-group" style={{ width: "300px" }}>
-                            <label>Choose your Profession</label>
-                            <Form.Control
-                                as="select"
-                                onChange={(event) => setProfession(event.target.value)}
-                            >
-                                <option>Select</option>
-                                <option>Student</option>
-                                <option>Teacherr</option>
-                                <option>Software Engineer</option>
-                                <option>Full Stack Developer</option>
-                            </Form.Control>
-                        </div><br />
+                                <div className="input-container" style={{ width: "300px" }}>
+                                    <label>Choose your Profession</label>
+                                    <Form.Control
+                                        as="select"
+                                        onChange={(event) => setProfession(event.target.value)}
+                                        required
+                                        style={{ width: "400px", borderRadius: "50px"}}
+                                    >
+                                        <option>Select</option>
+                                        <option>Student</option>
+                                        <option>Teacher</option>
+                                        <option>Software Engineer</option>
+                                        <option>Full Stack Developer</option>
+                                        <option>other</option>
+                                    </Form.Control>
 
-                        <Button type="submit" style={{ backgroundColor: 'black' }}>
-                            Register
-                        </Button>
-                        <p onClick={handleClick} className="forgot-password text-right">
-                            Already registered{" "}log in?
-                        </p>
-                        {flag && (
-                            <Alert color="primary" variant="danger">
-                                I got it you are in hurry! But every Field is important!
-                            </Alert>
+                                </div><br />
+
+                                <Button
+                                    type="submit"
+                                    className="button-container"
+                                    style={{ color: "black", backgroundColor: "white", width: "100px" }}>
+                                    Register
+                                </Button>
+                                <p
+                                    onClick={handleClick}
+                                    className="forgot-password text-right">
+
+                                    <h2>Already registered ?{" "} then log in!!</h2>
+                                </p>
+                                {flag && (
+                                    <div className="error">
+                                        I got it.. you are in hurry!! But every Field is important!!
+                                    </div>
+                                )}
+                            </form>
+                        ) : (
+                            <Login />
                         )}
-                    </form>
-                ) : (
-                    <Login />
-                )}
+                    </div>
+                </div>
             </div>
-
         </>
     );
 }
